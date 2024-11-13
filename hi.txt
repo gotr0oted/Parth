@@ -1,0 +1,18 @@
+#include <stdio.h>
+int product(int, int);
+void main() {
+	int m, n;
+	printf("Enter two integer values : ");
+	scanf("%d %d", &m, &n);
+	printf("Product of %d and %d is : %d\n", m, n, product(m, n)); // Complete the statement
+}
+int product(int m, int n) {
+	if (n== 0) { // fill the condition part
+		return 0; // Complete the return statement
+	} else if (n < 0) { // fill the condition part
+		return 0; // Complete the return statement
+	} else { 
+		return m+ product(m, n - 1); // Complete the return statement
+	}
+}
+
