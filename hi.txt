@@ -1,15 +1,51 @@
 #include <stdio.h>
-int sumOfDigits(int);
-void main() {
-	int n;
-	printf("Enter an integer value : ");
-	scanf("%d", &n);
-	printf("Sum of digits of given number %d = %d\n", ); // Complete the statement
+
+
+struct Employee {
+    int id;
+    char name[50];
+    char designation[50];
+    char department[50];
+    float basicSalary;
+};
+
+
+void printPaySlip(struct Employee emp) {
+	    float allowances = 0.1 * emp.basicSalary;
+	    float grossSalary = emp.basicSalary + allowances;
+	    float taxDeductions = 0.05 * emp.basicSalary;
+	    float netSalary = grossSalary - taxDeductions;
+
+	    printf("Pay Slip\n");
+	    printf("Employee ID: %d\n", emp.id);
+	    printf("Name: %s", emp.name);
+	    printf("Designation: %s", emp.designation);
+	    printf("Department: %s", emp.department);
+	    printf("Basic Salary: %.2f\n", emp.basicSalary);
+	    printf("Allowance: %.2f\n", allowances);
+	    printf("Gross Salary: %.2f\n", grossSalary);
+	    printf("Tax: %.2f\n", taxDeductions);
+	    printf("Net Salary: %.2f\n", netSalary);
 }
-int sumOfDigits(int n) {
-	if ( ) { // Fill the condition
-		return ; // Complete the statement
-	} else {
-		return ; // Complete the statement
-	}
+
+int main() {
+	    struct Employee emp;
+
+
+	    printf("Enter Employee ID: ");
+	    scanf("%d", &emp.id);
+	    getchar(); // To consume newline character left by scanf
+	    printf("Enter Name: ");
+	    fgets(emp.name, sizeof(emp.name), stdin);
+	    printf("Enter Designation: ");
+	    fgets(emp.designation, sizeof(emp.designation), stdin);
+	    printf("Enter Department: ");
+	    fgets(emp.department, sizeof(emp.department), stdin);
+	    printf("Enter Basic Salary: ");
+	    scanf("%f", &emp.basicSalary);
+
+
+	    printPaySlip(emp);
+
+	    return 0;
 }
